@@ -1,14 +1,9 @@
-// import { defineConfig } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
-// export default defineConfig({
-//   projects: [
-//     {
-//       name: 'api',
-//       testMatch: /.*api.test.ts/,
-//     },
-//     {
-//       name: 'ui',
-//       testMatch: /.*ui.test.ts/,
-//     },
-//   ],
-// });
+export default defineConfig({
+  testDir: './tests/api', 
+  timeout: 30000,
+  use: {
+    baseURL: 'https://jsonplaceholder.typicode.com',
+  },
+});
