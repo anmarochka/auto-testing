@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Calculator } from '../src/calculator';
+import { Calculator } from '../../src/calculator';
 import * as fs from 'fs/promises';
 
 describe("Calculator", () => {
