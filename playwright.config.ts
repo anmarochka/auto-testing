@@ -1,9 +1,26 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests/api', 
   timeout: 30000,
-  use: {
-    baseURL: 'https://jsonplaceholder.typicode.com',
-  },
+  reporter: [['list'], ['html']], 
+  projects: [
+    {
+      name: 'API Tests',
+      testDir: './tests/api',
+      use: {
+        baseURL: 'https://jsonplaceholder.typicode.com',
+      },
+    },
+    {
+      name: 'UI Tests',
+      testDir: './tests/ui',
+      use: {
+        baseURL: 'https://www.saucedemo.com', 
+        headless: false, 
+        browserName: 'chromium', 
+        screenshot: 'only-on-failure', 
+        video: 'retain-on-failure', 
+      },
+    },
+  ],
 });
