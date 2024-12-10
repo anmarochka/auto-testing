@@ -7,7 +7,11 @@
     "test": "vitest",
     "test:unit": "vitest tests/unit",               
     "test:coverage": "vitest --coverage",
-    "test:api": "npx playwright test" 
+    "test:api": "npx playwright test --project='API Tests'", 
+    "test:ui": "npx playwright test --project='UI Tests'", 
+    "test:all": "npx playwright test",
+    "test:ui:headed": "npx playwright test --project='UI Tests' --headed",
+    "test:ui:debug": "npx playwright test --project='UI Tests' --ui"
   },
   "keywords": [],
   "author": "",
