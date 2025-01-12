@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  timeout: 30000,
+  timeout: 60000, 
   reporter: [['list'], ['html']], 
   projects: [
     {
@@ -15,12 +15,17 @@ export default defineConfig({
       name: 'UI Tests',
       testDir: './tests/ui',
       use: {
-        baseURL: 'https://www.saucedemo.com', 
+        baseURL: 'https://www.saucedemo.com',
         headless: false, 
         browserName: 'chromium', 
-        screenshot: 'only-on-failure', 
-        video: 'retain-on-failure', 
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
       },
     },
   ],
+  use: {
+    launchOptions: {
+      slowMo: 3000, 
+    },
+  },
 });
